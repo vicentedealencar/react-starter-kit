@@ -7,9 +7,8 @@ import path from 'path';
 import express from 'express';
 import React from 'react';
 import './core/Dispatcher';
-import './stores/AppStore';
 import db from './core/Database';
-import App from './components/App';
+import CheckoutApp from './components/CheckoutApp';
 
 const server = express();
 
@@ -34,8 +33,8 @@ server.get('*', async (req, res, next) => {
     let uri = req.path;
     let notFound = false;
     let css = [];
-    let data = {description: ''};
-    let app = <App
+    let data = {description: '', title: ''};
+    let app = <CheckoutApp
       path={req.path}
       context={{
         onInsertCss: value => css.push(value),

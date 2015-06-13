@@ -3,7 +3,7 @@
 import 'babel/polyfill';
 import React from 'react';
 import FastClick from 'fastclick';
-import App from './components/App';
+import App from './components/CheckoutApp';
 import Dispatcher from './core/Dispatcher';
 import AppActions from './actions/AppActions';
 import ActionTypes from './constants/ActionTypes';

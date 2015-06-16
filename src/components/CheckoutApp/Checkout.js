@@ -10,19 +10,10 @@ export default class CheckoutApp {
   };
 
   render() {
-    console.log('render checkout');
     const { products, cart } = this.props;
 
-    console.log('products', products);
-    console.log('cart', cart);
-
-    let catalog, payment;
-
-    if (!cart.isClosed) {
-      catalog = <Catalog products={products}/>;
-    } else {
-      payment = <Payment cart={cart}/>;
-    }
+    let catalog = !cart.isClosed ? <Catalog products={products}/> : null;
+    let payment = cart.isClosed ? <Payment cart={cart}/> : null;
 
     return (
       <div>
